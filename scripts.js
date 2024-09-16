@@ -1,20 +1,24 @@
-document.getElementById('tippingForm').addEventListener('submit', function(event) {
+document.getElementById('tipForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Get input values
-    const totalAmount = parseFloat(document.getElementById('totalAmount').value);
-    const tipPercentage = parseFloat(document.getElementById('tipPercentage').value);
+    // Fixed total amount
+    const totalAmount = 100.00;
 
-    // Validate inputs
-    if (isNaN(totalAmount) || isNaN(tipPercentage) || totalAmount <= 0 || tipPercentage < 0) {
-        alert("Please enter valid numbers.");
+    // Get the selected tip percentage
+    const selectedTip = document.querySelector('input[name="tipPercentage"]:checked');
+
+    // Check if a tip percentage is selected
+    if (!selectedTip) {
+        alert("Please select a tip percentage.");
         return;
     }
 
-    // Calculate tip
+    const tipPercentage = parseFloat(selectedTip.value);
+
+    // Calculate the tip amount
     const tipAmount = (totalAmount * (tipPercentage / 100)).toFixed(2);
 
-    // Display result
+    // Display the result
     document.getElementById('tipAmount').textContent = `$${tipAmount}`;
     document.getElementById('result').classList.remove('hidden');
 });
