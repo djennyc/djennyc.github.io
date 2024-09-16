@@ -16,7 +16,7 @@ document.getElementById('tipForm').addEventListener('submit', function(event) {
     const tipPercentage = parseFloat(selectedTip.value);
 
     // Calculate the tip amount
-    const tipAmount = (totalAmount * (tipPercentage / 100)).toFixed(2);
+    const tipAmount = (totalAmount).toFixed(2);
 
     // Display the result
     document.getElementById('tipAmount').textContent = `$${tipAmount}`;
