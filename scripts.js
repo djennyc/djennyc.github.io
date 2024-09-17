@@ -19,6 +19,6 @@ document.getElementById('tipForm').addEventListener('submit', function(event) {
     const tipAmount = (totalAmount).toFixed(2);
 
     // Display the result
-   // document.getElementById('tipAmount').textContent = `$${tipAmount}`;
+   document.getElementById('tipAmount').textContent = `$${tipAmount}`;
    // document.getElementById('result').classList.remove('hidden');
 });
